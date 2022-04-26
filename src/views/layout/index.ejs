@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title></title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/css/layout/style.css">
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <h2>Welcome</h2>
+      <div class="menu-box">
+        <div class="menu-container">
+          <div class="line-one"></div>
+          <div class="line-two"></div>
+          <div class="line-three"></div>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="/auth/login">log in</a>
+            </li>
+            <li><a href="/auth/register">sign up</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+  <% if(message_success.length> 0) { %>
+    <div class="message_success">
+      <h2>
+        <%= message_success %>
+      </h2>
+    </div>
+    <% } %>
+      <% if(message_error.length>0) { %>
+        <div class="message_error">
+          <h2>
+            <%= message_error %>
+          </h2>
+        </div>
+        <% } %>
+
+          <script src="/js/menu/main.js"></script>
+</body>
+
+</html>

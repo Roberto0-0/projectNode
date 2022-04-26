@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title></title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/css/publish/edit/style.css">
+</head>
+
+<body>
+  <header>
+  </header>
+  <div class="container">
+    <form action="/publication/edit/<%= USER.id %>/publish/<%= PUBLICATION.id %>" method="POST">
+      <label for="title">Title</label>
+      <input type="text" name="title" id="title" value="<%= PUBLICATION.title %>" maxlength="10" required>
+      <label for="comment">Comment</label>
+      <textarea name="comment" id="comment" maxlength="200" required>
+        <%= PUBLICATION.comment %>
+      </textarea>
+      <button type="submit">edit</button>
+    </form>
+  </div>
+  <% if(message_success.length> 0) { %>
+    <div class="message_success">
+      <h2>
+        <%= message_success %>
+      </h2>
+    </div>
+    <% } %>
+      <% if(message_error.length>0) { %>
+        <div class="message_error">
+          <h2>
+            <%= message_error %>
+          </h2>
+        </div>
+        <% } %>
+
+</body>
+
+</html>

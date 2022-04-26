@@ -1,0 +1,173 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #f2f2f2;
+}
+
+header {
+  margin: auto;
+  width: 100%;
+  min-width: 280px;
+  height: 40vh;
+  background: #4d79ff;
+}
+
+.container {
+  margin: -175px auto;
+
+  width: 30%;
+  max-width: 500px;
+  min-width: 260px;
+  height: 350px;
+
+  border: 1px solid transparent;
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  background: #fff;
+}
+
+.container form {
+  margin: 50px auto;
+  
+  width: 95%;
+  height: 80%;
+  
+}
+
+.container form input {
+  display: block;
+  
+  margin: 10px auto;
+  padding: 0px 0px 0px 8px;
+  
+  width : 100%;
+  height: 55px;
+
+  outline: transparent;
+  border: 1px solid #b3b3b3;
+  border-radius: 8px;
+  background: none;
+
+  font-size: 1.1em;
+  font-family: sans-serif;
+  color: #b3b3b3;
+  
+}
+
+.container form input::placeholder {
+  color: #b3b3b3;
+}
+
+.container form input:hover {
+  border: 1px solid #4d79ff;
+}
+
+.container form button {
+  display: block;
+  
+  margin: 30px auto;
+  
+  width: 100%;
+  height: 50px;
+
+  outline: transparent;
+  background: #4d79ff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: .2s;
+
+  font-size: 1.4em;
+  font-family: sans-serif;
+  color: #fff;
+}
+
+.container .others {
+  margin: 10px auto;
+  width: 90%;
+  min-width: 240px;
+  height: 20%;
+
+}
+
+.container .others p {
+  text-align: center;
+  font-family: sans-serif;
+  line-height: 3.3em;
+}
+
+.message_success { 
+  margin: 250px auto;
+  width: 30%;
+  max-width: 500px;
+  min-width: 260px;
+  height: 50px;
+  background: #76e7a5;
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+}
+
+.message_success h2 {
+  text-align: center; 
+  font-size: 1.3em;
+  font-family: sans-serif;
+  font-weight: 300;
+  line-height: 2.3em;
+  color: #02703d;
+}
+
+.message_error {
+  margin: 250px auto;
+  width: 30%;
+  max-width: 500px;
+  min-width: 260px;
+  height: 50px;
+  background: #e77676;
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+}
+
+.message_error h2 {
+  text-align: center;
+  font-size: 1.3em;
+  font-family: sans-serif;
+  font-weight: 300;
+  line-height: 2.3em;
+  color: #700202;
+}
+
+@media (max-width: 425px) {
+  .container form input {
+    height: 45px;
+
+    font-size: 1em;
+  }
+
+  .container form button {
+    height: 40px;
+
+    font-size: 1.2em;
+  }
+
+  .message_success {
+    height: 40px;
+  }
+
+  .message_success h2 {
+    font-size: 1em;
+    line-height: 2.5em;
+  }
+
+  .message_error {
+    height: 40px;
+  }
+
+  .message_error h2 {
+    font-size: 1em;
+    line-height: 2.5em;
+  }
+}

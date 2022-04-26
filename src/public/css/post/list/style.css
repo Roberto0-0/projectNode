@@ -1,0 +1,415 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #f2f2f2;
+}
+
+header {
+  margin: auto;
+  width: 100%;
+  min-width: 260px;
+  height: 100px;
+
+  background: #4d79ff;
+}
+
+header .container {
+  display: flex;
+
+  margin: auto;
+  width: 90%;
+  max-width: 1250px;
+  height: 99%;
+
+  justify-content: space-between;
+  
+}
+
+header .container h2 {
+  font-size: 1.8em;
+  font-family: sans-serif;
+  font-weight: 300;
+  line-height: 3em;
+  color: #fff;
+
+}
+header .container nav {
+  margin: 25px 0px 0px 0px;
+  width: auto;
+  height: 50px; 
+
+}
+
+header .container nav ul {
+  display: flex;
+  
+  margin: auto;
+  width: 100%;
+  height: 99%;
+
+  text-align: center;
+  list-style-type: none;
+
+  gap: 1em;
+
+}
+
+header .container nav ul li {
+  margin: auto;
+  width: 120px;
+  height: 35px;
+  
+  background: #000080;
+  
+  border-radius: 8px;
+
+  cursor: pointer;
+  
+}
+
+header .container nav ul li a { 
+  display: block; 
+  
+  margin: 8px 0px 0px 0px;
+ 
+  font-family: sans-serif;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+
+}
+
+header .container nav ul li:hover {
+  transition: 0.4s;
+
+  background: #9999ff;
+
+}
+
+header .container nav ul li a:hover {
+  color: #000;
+}
+
+main {
+  margin: 20px auto;
+  width: 99vw;
+  height: auto;
+  min-height: 200px;
+ 
+}
+
+main .main-container {
+  margin: auto;
+  width: 60%;
+  max-width: 1250px;
+  min-width: 300px;
+  height: 100%;
+
+
+}
+
+main .main-container ul {
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  min-height: 150px;
+
+}
+
+main .main-container ul li {
+  display: block;
+  
+  margin: 10px auto;
+  width: 100%;
+  height: 100%;
+  min-height: 150px;
+
+  border: 1px solid #b3b3b3;
+  border-radius: 8px;
+
+}
+
+main .main-container ul li h2 {
+  margin-left: 10px;
+
+  font-family: sans-serif;
+  font-size: 1.8em;
+  line-height: 1.7em;
+}
+
+main .main-container ul li .campText {
+  margin: 5px auto;
+  width: 98%;
+  height: auto;
+
+}
+
+main .main-container ul li .campText p {
+  text-align: center;
+  font-family: sans-serif;
+  /* text-indent: 10px; */
+  text-align:justify;
+
+  word-wrap: break-word;
+
+}
+
+main .main-container ul li span {
+  margin-left: 10px;
+
+  font-family: sans-serif;
+  font-size: .8em;
+  line-height: 3em;
+}
+
+main .main-container ul li .options {
+  display: flex;
+
+  margin: 30px 0px 0px 0px;
+  width: 100%;
+  height: 40px;
+
+  gap: 1em;
+
+}
+
+main .main-container ul li .options .options-container {
+  display: flex;
+  margin: auto;
+  width: auto;
+  height: auto;
+
+  gap: 0.3em;
+
+}
+
+main .main-container ul li .options .options-container button {
+  margin: auto;
+  width: 90px;
+  height: 30px;
+
+  outline: transparent;
+  border: none;
+  border-radius: 8px;
+
+  font-family: sans-serif;
+  font-weight: bold;
+  color: #fff;
+
+  cursor: pointer;
+}
+
+main .main-container ul li .options .options-container form {
+  width: auto;
+  height: auto;
+}
+
+main .main-container ul li .options .options-container form input {
+  display: none;
+}
+
+main .main-container ul li #btn-edit {
+  background: #009900;
+} 
+
+main .main-container ul li #btn-delete {
+  background: #ff0000;
+}
+
+main .main-container ul li #btn-publish {
+  background: #000080;
+}
+
+main .main-container ul li .not-comment {
+  margin-left: 0px;
+
+  text-align: center;
+  line-height: 6.5em;
+}
+
+.message_success { 
+  margin: 50px auto;
+  width: 30%;
+  max-width: 500px;
+  min-width: 260px;
+  height: 50px;
+  background: #76e7a5;
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+}
+
+.message_success h2 {
+  text-align: center; 
+  font-size: 1.3em;
+  font-family: sans-serif;
+  font-weight: 300;
+  line-height: 2.3em;
+  color: #02703d;
+}
+
+.message_error {
+  margin: 50px auto;
+  width: 30%;
+  max-width: 500px;
+  min-width: 260px;
+  height: 50px;
+  background: #e77676;
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+}
+
+.message_error h2 {
+  text-align: center;
+  font-size: 1.3em;
+  font-family: sans-serif;
+  font-weight: 300;
+  line-height: 2.3em;
+  color: #700202;
+}
+
+@media (max-width: 425px) {
+  header .container h2 {
+    font-size: 1.5em;
+    line-height: 4em;
+  }
+
+  nav {
+    display: none;
+  }
+
+  .line-one,
+  .line-two,
+  .line-three {
+    margin: 5px auto;
+    width: 100%;
+    height: 5px;
+
+    border-radius: 8px;
+
+    background: #fff;
+
+    transition: 0.3s;
+
+  }
+
+  .menu-container {
+    position: absolute;
+    top: 30px;
+    right: 15px;
+
+    width: 40px;
+    height: 30px; 
+  }
+
+  .menu-box.active {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    background: #4d79ff;
+
+    z-index: 10px;
+  }
+
+  .menu-box.active nav {
+    display: block;
+
+    width: 90%;
+    height: auto; 
+
+    margin: 150px auto;
+  }
+
+  .menu-box.active nav ul {
+    display: block;
+  }
+
+  .menu-box.active nav ul li {
+    margin: 10px auto;
+    width: 99%;
+    height: 50px; 
+  }
+
+  .menu-box.active nav ul li a { 
+    font-size: 1.4em;
+      line-height: 2.1em;
+  }
+
+  .menu-box.active .menu-container .line-one {
+    transform: rotate(45deg) translate(7px, 7px);
+  }
+
+   .menu-box.active .menu-container .line-two {
+    opacity: 0;
+  }
+
+   .menu-box.active .menu-container .line-three {
+    transform: rotate(-45deg) translate(8px, -7px);
+  }
+
+  .menu-box.active html {
+    overflow: hidden;
+  }
+
+  main .main-container ul li h2 {
+    font-size: 1.4em;
+  }
+
+  main .main-container ul li .campText {
+    width: 93%;
+  }
+
+  main .main-container ul li span {
+    font-size: .4em;
+  }
+
+  main .main-container ul li .options .options-container button {
+    width: 90px;
+    height: 25px;
+  }
+
+   .message_success {
+    margin-top: -5px;
+    min-width: 300px;
+    height: 40px;
+  }
+
+  .message_success h2 {
+    font-size: 1em;
+    line-height: 2.5em;
+  }
+
+  .message_error {
+    margin-top: -5px;
+    min-width: 300px;
+    height: 40px;
+  } 
+
+  .message_error h2 {
+    font-size: 1em;
+    line-height: 2.5em;
+  }
+
+}
+
+@media (max-width: 290px) {
+  main .main-container {
+    min-width: 260px;
+  }
+
+  .message_success {
+    min-width: 260px;
+  }
+
+  .message_error {
+    min-width: 260px;
+  } 
+
+}

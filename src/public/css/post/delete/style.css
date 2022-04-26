@@ -1,0 +1,180 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #fff;
+}
+
+header {
+  margin: auto;
+  width: 100%;
+  min-width: 400px;
+  height: 100px;
+  background: #4d79ff;
+}
+
+header nav {
+  display: flex;
+  margin: 0 auto;
+  
+  width: 95%;
+  max-width: 1250px;
+  height: 99px;
+
+  justify-content: space-between;
+  /* background: red; */
+
+}
+
+header nav h2 {
+  margin: 30px 0px 0px 0px;
+
+  text-align: center;
+  font-family: sans-serif;
+  font-size: 1.7em;
+  font-weight: 300;
+  color:  #595959;
+}
+
+header nav ul {
+  margin: 35px 0px 0px 0px;
+
+  height: 25px;
+  /* border: 1px solid #000; */
+}
+
+header nav ul a {
+  text-align: center;
+  font-family: sans-serif;
+  font-size: 1.1em;
+  text-decoration: none;
+  color: #595959;
+}
+
+header nav ul a:hover {
+  text-decoration: underline;
+}
+
+main {
+  margin: 20px auto;
+  width: 80%;
+  height: auto;
+  border: 1px solid #000;
+  border-radius: 8px;
+  background:  #b3b3ff;
+}
+
+main ul {
+  margin: 20px auto;
+  width: 99%;
+  height: auto;
+}
+
+main ul li {
+  margin: 10px auto;
+  display: block;
+  width: 99%;
+  height: 100%;
+  border: transparent;
+  border-radius: 8px;
+  background: #fff;
+}
+
+main ul li h2 {
+  text-align: center;
+  font-family: sans-serif;
+  font-size: 1.4em;
+  color:  #595959;
+}
+
+main ul li p {
+  margin: 0px 0px 0px 10px;
+  
+  font-family: sans-serif;
+  font-size: 1em;
+  color: #808080;
+}
+
+main ul li #options { 
+  display: flex;
+  margin:5% 0% 0% 0%;
+  width: 90%;
+  height: auto;
+  /* background: red; */
+}
+
+main ul li #options span {
+  margin: 15px;
+  font-family: sans-serif;
+  font-size: 0.9em;
+}
+
+main ul li #options a {
+    margin: 10px;
+}
+
+main ul li #options a button { 
+  width: 100px;
+  height: 25px;
+  outline: transparent;
+  border: none;
+  border-radius: 5px;
+  gap: 5em;
+  cursor: pointer;
+
+  font-family: sans-serif;
+  font-size: 0.9em;
+  color: #fff;
+} 
+
+main ul li #options a #btn_edit {
+  background-color: #000099;
+}
+
+main ul li #options a #btn_delete {
+  background-color: #990000;
+}
+
+
+.message_success { 
+  margin: 50px auto;
+  width: 30%;
+  max-width: 500px;
+  min-width: 300px;
+  height: 50px;
+  background: #76e7a5;
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+}
+
+.message_success h2 {
+  text-align: center;
+  padding: 12px 0px 0px 0px;
+  font-size: 1.3em;
+  font-family: sans-serif;
+  font-weight: 300;
+  color: #02703d;
+}
+
+.message_error {
+  margin: 50px auto;
+  width: 30%;
+  max-width: 500px;
+  min-width: 300px;
+  height: 50px;
+  background: #e77676;
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+}
+
+.message_error h2 {
+  text-align: center;
+  padding: 12px 0px 0px 0px;
+  font-size: 1.3em;
+  font-family: sans-serif;
+  font-weight: 300;
+  color: #700202;
+}

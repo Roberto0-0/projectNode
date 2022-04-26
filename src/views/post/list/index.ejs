@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title></title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/css/post/list/style.css">
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <h2>my posts</h2>
+      <div class="menu-box">
+        <div class="menu-container">
+          <div class="line-one"></div>
+          <div class="line-two"></div>
+          <div class="line-three"></div>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="/post/create/<%= USER.id %>">new post</a></li>
+            <!--  <li><a href="/auth/login/authentication">home</a></li> -->
+            <li><a href="/publications/show/<%= USER.id %>">publications</a></li>
+            <li><a href="/auth/logout">logout</a></li>
+          </ul>
+        </nav>
+
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="main-container">
+      <ul>
+        <% if(POST.length>0) { %>
+          <% POST.forEach(post=> { %>
+            <li>
+              <h2>
+                <%= post.title %>
+              </h2>
+              <div class="campText">
+                <p>
+                  <%= post.comment %>
+                </p>
+              </div>
+              <span><strong>Data: <%= post.createAt %></strong></span>
+              <div class="options">
+                <div class="options-container">
+                  <form action="/publications/<%= USER.id %>" method="POST">
+                    <input type="text" name="title" value="<%= post.title %>">
+                    <input type="text" name="comment" value="<%= post.comment %>">
+                    <a href="/publications"><button type="" id="btn-publish">publish</button></a>
+                  </form>
+                  <a href="/posts/edit/<%= USER.id %>/post/<%= post.id %>"><button type=""
+                      id="btn-edit">edit</button></a>
+                  <a href="/posts/delete/<%= USER.id %>/post/<%= post.id %>"><button type=""
+                      id="btn-delete">delete</button></a>
+                </div>
+              </div>
+            </li>
+            <% }) %>
+              <% } else { %>
+                <li>
+                  <h2 class="not-comment">You don't have posts</h2>
+                </li>
+                <% } %>
+      </ul>
+    </div>
+  </main>
+  <% if(message_success.length> 0) { %>
+    <div class="message_success">
+      <h2>
+        <%= message_success %>
+      </h2>
+    </div>
+    <% } %>
+      <% if(message_error.length>0) { %>
+        <div class="message_error">
+          <h2>
+            <%= message_error %>
+          </h2>
+        </div>
+        <% } %>
+          <script src="/js/menu/main.js"></script>
+</body>
+
+</html>

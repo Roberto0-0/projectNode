@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title></title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/css/post/delete/style.css">
+</head>
+
+<body>
+  <header>
+    <nav>
+      <h2>Your posts <%= USER.name %>
+      </h2>
+    </nav>
+  </header>
+  <main>
+    <ul>
+      <% if(POST.length>0) { %>
+        <% POST.forEach(post=> { %>
+          <li>
+            <h2>
+              <%= post.title %>
+            </h2>
+            <p>
+              <%= post.comment %>
+            </p>
+            <div id="options">
+              <span>
+                <%= post.createAt %>
+              </span>
+              <a href=""><button type="" id="btn_edit">edit</button></a>
+              <a href="/posts/delete/<%= USER.id %>/post/<%= post.id %>"><button type=""
+                  id="btn_delete">delete</button></a>
+            </div>
+          </li>
+          <% }) %>
+            <% } else { %>
+              <li>
+                <h2>You not have posts</h2>
+              </li>
+              <% } %>
+    </ul>
+  </main>
+  <% if(message_success.length> 0) { %>
+    <div class="message_success">
+      <h2>
+        <%= message_success %>
+      </h2>
+    </div>
+    <% } %>
+      <% if(message_error.length>0) { %>
+        <div class="message_error">
+          <h2>
+            <%= message_error %>
+          </h2>
+        </div>
+        <% } %>
+
+</body>
+
+</html>
