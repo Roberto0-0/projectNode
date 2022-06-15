@@ -3,23 +3,37 @@ const bodyParser = require('body-parser')
 const path = require('path')
 const session = require('express-session')
 const flash = require('express-flash')
+const routes = require("./routes/index")
 
-const app = express()
+class App {
+  constructor() {
+    this.app = express()
 
-app.use(bodyParser.urlencoded({ extended: true }))
-app.use(bodyParser.json())
+    this.middleware()
+    this.routes()
+  }
 
-app.use(express.static(path.join(__dirname, 'public')))
-app.set('views', path.join(__dirname, 'views'))
-app.engine('ejs', require('ejs').renderFile)
-app.set('views engine', 'ejs')
+  middleware() {
+    this.app.use(bodyParser.urlencoded({ extended: true }))
+    this.app.use(bodyParser.json())
 
-app.use(session({
-  secret: 'secret',
-  resave: true,
-  saveUninitialized: true,
-  cookie: { maxAge: 60000 }
-}))
-app.use(flash())
+    this.app.use(express.static(path.join(__dirname, 'public')))
+    this.app.set('views', path.join(__dirname, 'views'))
+    this.app.engine('ejs', require('ejs').renderFile)
+    this.app.set('views engine', 'ejs')
 
-module.exports = { app }
+    this.app.use(session({
+      secret: 'secret',
+      resave: true,
+      saveUninitialized: true,
+      cookie: { maxAge: 60000 }
+    }))
+    this.app.use(flash())
+  }
+
+  routes() {
+    this.app.use(routes)
+  }
+}
+
+module.exports = new App().app
