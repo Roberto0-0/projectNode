@@ -4,8 +4,89 @@
   box-sizing: border-box;
 }
 
+:root {
+  /* Light Theme */
+  --background-light: #f2f2f2;
+  --text-light: #fff;
+  --header-light: #4d79ff;
+  --button-login-light: #fff;
+  --button-signup-light: #000080;
+  --button-hover: #9999ff;
+  --border-light: #fff;
+  --text-login-light: #000080;
+  --text-signup-light: #fff;
+  --background-message-success: #76e7a5;
+  --background-message-error: #e77676;
+  --text-message-success: #02703d;
+  --text-message-error: #700202;  
+  --box-comment-light: #ECEBEB;
+
+  /* Dark Theme */
+  --background-dark: #09090A;
+  --header-dark: #121214;
+  --text-dark: #000;
+  --border-dark: #000;
+  --box-comment-dark: #121214;
+}
+
+#themes.active {
+  background: var(--background-dark);
+  transition: 0.4s;
+}
+
+#themes.active header {
+  background: var(--header-dark);
+  border-bottom: 1px solid #2c2b2b;
+  transition: 0.4s;
+}
+
+#themes.active header .container nav ul .border button {
+  margin: 0px 0px 0px 30px;
+  transition: 0.3s;
+
+}
+
+#themes.active header .container nav ul .border button .sun {
+  display: none;
+  transition: 0.3s;
+
+}
+
+#themes.active header .container nav ul .border button .moon {
+  display: block;
+  transition: 0.3s;
+
+}
+
+#themes.active main .main-container ul li {
+  border: 1px solid #2c2b2b;
+  background: var(--box-comment-dark);
+  transition: 0.3s;
+}
+
+#themes.active main .main-container ul li h2 {
+  color: #cccccc;
+  transition: 0.3s;
+}
+
+#themes.active main .main-container ul li .campText {
+  color: #cccccc;
+  transition: 0.3s;
+}
+
+#themes.active main .main-container ul li .campText p{
+  color: #cccccc;
+  transition: 0.3s;
+}
+
+#themes.active main .main-container ul li span {
+  color: #cccccc;
+  transition: 0.3s;
+}
+
 body {
-  background: #f2f2f2;
+  background: var(--background-light);
+  transition: 0.3s;
 }
 
 header {
@@ -14,7 +95,8 @@ header {
   min-width: 260px;
   height: 100px;
 
-  background: #4d79ff;
+  background: var(--header-light);
+  transition: 0.3s;
 }
 
 header .container {
@@ -25,22 +107,23 @@ header .container {
   max-width: 1250px;
   height: 99%;
 
+  align-items: center;
   justify-content: space-between;
   
 }
 
 header .container h2 {
   font-size: 1.8em;
-  font-family: sans-serif;
+  font-family: 'Varela Round', sans-serif;
   font-weight: 300;
-  line-height: 3em;
-  color: #fff;
+  color: var(--text-light);
+  transition: 0.3s;
 
 }
+
 header .container nav {
-  margin: 25px 0px 0px 0px;
-  width: auto;
-  height: 50px; 
+  width: 340px;
+  height: 50px;
 
 }
 
@@ -48,51 +131,97 @@ header .container nav ul {
   display: flex;
   
   margin: auto;
-  width: 100%;
+  width: 90%;
   height: 99%;
 
-  text-align: center;
   list-style-type: none;
 
-  gap: 1em;
+  align-items: center;
+  justify-content: space-between;
 
 }
 
-header .container nav ul li {
-  margin: auto;
-  width: 120px;
+header .container nav ul a button {
   height: 35px;
   
-  background: #000080;
-  
-  border-radius: 8px;
+  font-family: 'Manrope', sans-serif;
+  font-size: 1em;
+  font-weight: bold;
+
+  outline: transparent;
+  border: none;
+  border-radius: 3px;
 
   cursor: pointer;
   
 }
 
-header .container nav ul li a { 
-  display: block; 
-  
-  margin: 8px 0px 0px 0px;
- 
-  font-family: sans-serif;
-  font-weight: bold;
-  color: #fff;
-  text-decoration: none;
+header .container nav ul a .new-post {
+  width: 90px;
 
+  background: var(--button-login-light);
+  color: var(--text-login-light);
+  transition: 0.3s;
 }
 
-header .container nav ul li:hover {
+header .container nav ul a .publi {
+  width: 130px;
+
+  background: var(--button-signup-light);
+  color: var(--text-signup-light);
+  transition: 0.3s;
+}
+
+header .container nav ul .new-post:hover {
+  background: var(--button-hover);
+  color: var(--text-signup-light);
+  transition: 0.3s;
+}
+
+header .container nav ul .publi:hover {
   transition: 0.4s;
 
-  background: #9999ff;
+  background: var(--button-hover);
+  color: var(--text-login-light);
+  transition: 0.3s;
+}
+
+header .container nav ul .border {
+  display: flex;
+
+  padding: 3px;
+  width: 65px;
+  height: 35px;
+
+  border-radius: 20px;
+
+  background: #bbbbbb;
+
+  align-items: center;
 
 }
 
-header .container nav ul li a:hover {
-  color: #000;
+header .container nav ul .border button {
+  width: 30px;
+  height: 30px;
+
+  outline: transparent;
+  border: none;
+  border-radius: 50%;
+  background: #fff;
+
+  align-items: center;
+
+  cursor: pointer;
+  transition: 0.3s;
+  
 }
+
+header .container nav ul .border button .moon{
+  display: none;
+
+}
+
 
 main {
   margin: 20px auto;
@@ -131,7 +260,9 @@ main .main-container ul li {
   border: 1px solid #b3b3b3;
   border-radius: 8px;
 
-}
+  background: var(--box-comment-light);
+  transition: 0.3s;
+} 
 
 main .main-container ul li h2 {
   margin-left: 10px;
@@ -139,22 +270,28 @@ main .main-container ul li h2 {
   font-family: sans-serif;
   font-size: 1.8em;
   line-height: 1.7em;
+  color: var(--text-dark);
+  transition: 0.3s;
 }
 
 main .main-container ul li .campText {
   margin: 5px auto;
   width: 98%;
   height: auto;
+  
+  color: var(--text-dark);
+  transition: 0.3s;
 
 }
 
 main .main-container ul li .campText p {
   text-align: center;
   font-family: sans-serif;
-  /* text-indent: 10px; */
   text-align:justify;
 
   word-wrap: break-word;
+  color: var(--text-dark);
+  transition: 0.3s;
 
 }
 
@@ -164,6 +301,8 @@ main .main-container ul li span {
   font-family: sans-serif;
   font-size: .8em;
   line-height: 3em;
+  color: var(--text-dark);
+  transition: 0.3s;
 }
 
 main .main-container ul li .options {
@@ -174,7 +313,6 @@ main .main-container ul li .options {
   height: 40px;
 
   gap: 1em;
-
 }
 
 main .main-container ul li .options .options-container {
@@ -201,6 +339,8 @@ main .main-container ul li .options .options-container button {
   color: #fff;
 
   cursor: pointer;
+
+  background: none;
 }
 
 main .main-container ul li .options .options-container form {
@@ -213,22 +353,21 @@ main .main-container ul li .options .options-container form input {
 }
 
 main .main-container ul li #btn-edit {
-  background: #009900;
+  border: 1px solid #009900;
 } 
 
 main .main-container ul li #btn-delete {
-  background: #ff0000;
+  border: 1px solid #ff0000;
 }
 
 main .main-container ul li #btn-publish {
-  background: #000080;
+  border: 1px solid #000080;
 }
 
 main .main-container ul li .not-comment {
-  margin-left: 0px;
+  padding: 50px;
 
   text-align: center;
-  line-height: 6.5em;
 }
 
 .message_success { 
@@ -318,6 +457,10 @@ main .main-container ul li .not-comment {
     z-index: 10px;
   }
 
+  #themes.active .menu-box.active {
+    background: var(--header-dark);
+  }
+
   .menu-box.active nav {
     display: block;
 
@@ -331,15 +474,18 @@ main .main-container ul li .not-comment {
     display: block;
   }
 
-  .menu-box.active nav ul li {
-    margin: 10px auto;
+  .menu-box.active nav ul a button {
+    margin: 5px auto;
     width: 99%;
     height: 50px; 
   }
 
-  .menu-box.active nav ul li a { 
+  .menu-box.active nav ul a button { 
     font-size: 1.4em;
-      line-height: 2.1em;
+  }
+
+  .menu-box.active nav ul .border {
+    margin: 5px auto;
   }
 
   .menu-box.active .menu-container .line-one {

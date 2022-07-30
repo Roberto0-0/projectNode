@@ -4,22 +4,50 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <script src="https://unpkg.com/phosphor-icons"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="/css/user/login/style.css">
   <title>login</title>
 </head>
 
 <body>
   <header></header>
-  <div class="container">
+  <!-- <div class="container">
     <form action="/auth/login/authentication" method="POST">
       <input type="email" name="email" value="" placeholder="E-mail" required>
       <input type="password" name="password" value="" placeholder="Password" required>
       <button type="submit">login</button>
       <div class="others">
-        <p> don't have an account <a href="/auth/register">click here!</a>
+        <p> don't have an account? <a href="/auth/register">click here!</a>
         </p>
       </div>
     </form>
+  </div> -->
+  <div class="container">
+    <h1>Login</h1>
+    <form action="/auth/login/authentication" method="POST">
+        <div class="input">
+            <i class="ph-envelope"></i>
+            <input type="email" name="email" placeholder="E-mail" required> 
+        </div>
+        <div class="input">
+            <i class="ph-lock-simple"></i>
+            <input type="password" name="password" class="password" placeholder="Password" required>
+            <img src="/svg/password/eye.svg" class="see-password" width="20px" height="20px" alt="">
+        </div>
+        <button type="submit">sign in</button>
+    </form>
+
+    <div class="others">
+        <p>
+            don't have an account? <a href="/auth/register">click here!</a>
+        </p>
+    </div>
   </div>
   <% if(message_success.length> 0) { %>
     <div class="message_success">
@@ -35,6 +63,8 @@
           </h2>
         </div>
         <% } %>
+
+  <script src="/js/seePassword/main.js"></script>
 </body>
 
 </html>

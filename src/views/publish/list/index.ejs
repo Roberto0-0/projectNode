@@ -5,28 +5,45 @@
   <title></title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <script src="https://unpkg.com/phosphor-icons"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="/css/publish/list/style.css">
 </head>
 
-<body>
+<body id="themes">
   <header>
     <div class="container">
       <h2>Publications</h2>
       <div class="menu-box">
+
         <div class="menu-container">
           <div class="line-one"></div>
           <div class="line-two"></div>
           <div class="line-three"></div>
         </div>
+
         <nav>
+
           <ul>
-            <li>
-              <a href="/posts/<%= USER.id %>">posts</a>
-            </li>
+            <a href="/posts/<%= USER.id %>">
+              <button class="post">post</button>
+            </a>
+
+            <div class="border">
+              <button id="btn-themes">
+                <div class="sun"></div>
+                <div class="moon"></div>
+              </button>
+            </div>
           </ul>
+
         </nav>
       </div>
-
     </div>
   </header>
   <main>
@@ -37,11 +54,8 @@
             <li>
               <div class="profile">
                 <div class="image">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-                    <path fill="none" d="M0 0h24v24H0z" />
-                    <path
-                      d="M4 22a8 8 0 1 1 16 0h-2a6 6 0 1 0-12 0H4zm8-9c-3.315 0-6-2.685-6-6s2.685-6 6-6 6 2.685 6 6-2.685 6-6 6zm0-2c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4z" />
-                  </svg>
+                  <img src="/svg/user/user-line-light.svg" alt="" class="user-light">
+                  <img src="/svg/user/user-line-dark.svg" alt="" class="user-dark">
                 </div>
                 <h2>
                   <%= p.userName %>
@@ -58,10 +72,16 @@
               </div>
               <div class="options">
                 <div class="options-container">
-                  <a href="/publication/edit/<%= USER.id %>/publish/<%= p.id %>"><button type=""
-                      id="btn-edit">edit</button></a>
-                  <a href="/publication/delete/<%= USER.id %>/publish/<%= p.id %>"><button type=""
-                      id="btn-delete">delete</button></a>
+                  <a href="/publication/edit/<%= USER.id %>/publish/<%= p.id %>" title="edit" >
+                    <button type="button" id="btn-edit">
+                      <i class="ph-pencil" style="color: green;"></i>
+                    </button>
+                  </a>
+                  <a href="/publication/delete/<%= USER.id %>/publish/<%= p.id %>" title="delete" >
+                    <button type="button" id="btn-delete">
+                      <i class="ph-trash" style="color: red;"></i>
+                    </button>
+                  </a>
                 </div>
 
             </li>
@@ -69,11 +89,8 @@
               <li>
                 <div class="profile">
                   <div class="image">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-                      <path fill="none" d="M0 0h24v24H0z" />
-                      <path
-                        d="M4 22a8 8 0 1 1 16 0h-2a6 6 0 1 0-12 0H4zm8-9c-3.315 0-6-2.685-6-6s2.685-6 6-6 6 2.685 6 6-2.685 6-6 6zm0-2c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4z" />
-                    </svg>
+                    <img src="/svg/user/user-line-light.svg" alt="" class="user-light">
+                    <img src="/svg/user/user-line-dark.svg" alt="" class="user-dark">
                   </div>
                   <h2>
                     <%= p.userName %>
@@ -95,6 +112,7 @@
     </div>
   </main>
   <script src="/js/menu/main.js"></script>
+  <script src="/js/themes/main.js"></script>
 </body>
 
 </html>

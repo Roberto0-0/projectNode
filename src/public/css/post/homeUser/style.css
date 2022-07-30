@@ -4,6 +4,56 @@
   box-sizing: border-box;
 }
 
+:root {
+  /* Light Theme */
+  --background-light: #f2f2f2;
+  --text: #fff;
+  --header-light: #4d79ff;
+  --button-login-light: #fff;
+  --button-signup-light: #000080;
+  --button-hover: #9999ff;
+  --text-login-light: #000080;
+  --text-signup-light: #fff;
+  --background-message-success: #76e7a5;
+  --background-message-error: #e77676;
+  --text-message-success: #02703d;
+  --text-message-error: #700202;
+
+  /* Dark Theme */
+  --background-dark: #09090A;
+  --header-dark: #121214;
+}
+
+#themes.active {
+  background: var(--background-dark);
+  transition: 0.4s;
+}
+
+#themes.active header {
+  background: var(--header-dark);
+  border-bottom: 1px solid #2c2b2b;
+  transition: 0.4s;
+}
+
+#themes.active header .container nav ul .border button {
+  margin: 0px 0px 0px 30px;
+  transition: 0.3s;
+
+}
+
+#themes.active header .container nav ul .border button .sun {
+  display: none;
+  transition: 0.3s;
+
+}
+
+#themes.active header .container nav ul .border button .moon {
+  display: block;
+  transition: 0.3s;
+
+}
+
+
 body {
   background: #f2f2f2;
 }
@@ -24,20 +74,20 @@ header .container {
   max-width: 1250px;
   height: 99%;
  
+  align-items: center;
   justify-content: space-between;
 }
 
 header .container h2  {
-  font-family: sans-serif;
-  font-size: 1.4em;
+  font-family: 'Varela Round', sans-serif;
+  font-size: 1.8em;
   font-weight: bold;
-  line-height: 4.3em;
   color: #fff;
+
 }
 
 header .container nav {
-  margin: 25px 0px 0px 0px;
-  width: auto;
+  width: 290px;
   height: 50px;
 
 }
@@ -46,54 +96,98 @@ header .container nav ul {
   display: flex;
   
   margin: auto;
-  width: 100%;
+  width: 90%;
   height: 99%;
 
-  text-align: center;
   list-style-type: none;
 
-  gap: 1em;
+  align-items: center;
+  justify-content: space-between;
+
 }
 
-header .container nav ul li {
-  margin: auto;
-  width: 100px;
+header .container nav ul a button {
   height: 35px;
   
-  background: #000080;
-  
-  border-radius: 8px;
+  font-family: 'Manrope', sans-serif;
+  font-size: 1em;
+  font-weight: bold;
+
+  outline: transparent;
+  border: none;
+  border-radius: 3px;
 
   cursor: pointer;
   
 }
 
-header .container nav ul li a { 
-  display: block; 
-  
-  margin: 8px 0px 0px 0px;
- 
-  font-family: sans-serif;
-  font-weight: bold;
-  color: #fff;
-  text-decoration: none;
+header .container nav ul a .myposts {
+  width: 70px;
 
+  background: var(--button-login-light);
+  color: var(--text-login-light);
 }
 
-header .container nav ul li:hover {
+header .container nav ul a .logout {
+  width: 90px;
+
+  background: var(--button-signup-light);
+  color: var(--text-signup-light);
+}
+
+header .container nav ul .myposts:hover {
   transition: 0.4s;
 
-  background: #9999ff;
+  background: var(--button-hover);
+  color: var(--text-signup-light);
 }
 
-header .container nav ul li a:hover {
-  color: #000;
+header .container nav ul .logout:hover {
+  transition: 0.4s;
+
+  background: var(--button-hover);
+  color: var(--text-login-light);
+}
+
+header .container nav ul .border {
+  display: flex;
+
+  padding: 3px;
+  width: 65px;
+  height: 35px;
+
+  border-radius: 20px;
+
+  background: #bbbbbb;
+
+  align-items: center;
+
+}
+
+header .container nav ul .border button {
+  width: 30px;
+  height: 30px;
+
+  outline: transparent;
+  border: none;
+  border-radius: 50%;
+  background: #fff;
+
+  align-items: center;
+
+  cursor: pointer;
+  transition: 0.3s;
+  
+}
+
+header .container nav ul .border button .moon{
+  display: none;
+
 }
 
 @media (max-width: 425px) {
   header .container h2 {
-    font-size: 1em;
-    line-height: 6.3em;
+    font-size: 1.2em;
   }
 
   nav {
@@ -138,6 +232,10 @@ header .container nav ul li a:hover {
     z-index: 10px;
   }
 
+  #themes.active .menu-box.active {
+    background: var(--header-dark);
+  }
+
   .menu-box.active nav {
    display: block;
 
@@ -153,15 +251,18 @@ header .container nav ul li a:hover {
     display: block;
   }
 
-  .menu-box.active nav ul li {
-    margin: 10px auto;
+  .menu-box.active nav ul a button {
+    margin: 5px auto;
     width: 99%;
     height: 50px; 
   }
 
-  .menu-box.active nav ul li a { 
+  .menu-box.active nav ul li a button { 
     font-size: 1.4em;
-      line-height: 2.1em;
+  }
+
+  .menu-box.active nav ul .border {
+    margin: 5px auto;
   }
 
   .menu-box.active .menu-container .line-one {
@@ -175,6 +276,4 @@ header .container nav ul li a:hover {
   .menu-box.active .menu-container .line-three {
     transform: rotate(-45deg) translate(8px, -7px);
   }
-
-
 }

@@ -4,26 +4,50 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Titan+One&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="/css/post/homeUser/style.css">
   <title>posts</title>
 </head>
 
-<body>
+<body id="themes">
   <header>
     <div class="container">
-      <h2>Welcome <%= data.name %>
+      <h2>
+        Hello, <%= data.name %>
       </h2>
+
       <div class="menu-box">
+
         <div class="menu-container">
           <div class="line-one"></div>
           <div class="line-two"></div>
           <div class="line-three"></div>
         </div>
+
         <nav>
           </h2>
           <ul>
-            <li><a href="/posts/<%= data.id %>">my posts</a></li>
-            <li><a href="/auth/logout">logout</a></li>
+            <a href="/posts/<%= data.id %>">
+              <button class="myposts">posts</button>
+            </a>
+            <a href="/auth/logout">
+              <button class="logout">logout</button>
+            </a>
+
+            <div class="border">
+              <button id="btn-themes">
+                <div class="sun"></div>
+                <div class="moon"></div>
+              </button>
+            </div>
           </ul>
         </nav>
 
@@ -32,6 +56,7 @@
   </header>
 
   <script src="/js/menu/main.js"></script>
+  <script src="/js/themes/main.js"></script>
 </body>
 
 </html>

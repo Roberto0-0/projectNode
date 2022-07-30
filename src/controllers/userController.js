@@ -3,6 +3,7 @@ const { createPasswordHash } = require('../services/crypt')
 const bcrypt = require('bcryptjs')
 
 class UserController {
+
   index(req, res) {
     res.render('user/register/index.ejs', {
       message_success: req.flash('message_success'),

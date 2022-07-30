@@ -5,25 +5,51 @@
   <title></title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <script src="https://unpkg.com/phosphor-icons"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="/css/post/list/style.css">
 </head>
 
-<body>
+<body id="themes">
   <header>
     <div class="container">
-      <h2>my posts</h2>
+      <h2>posts</h2>
       <div class="menu-box">
+
         <div class="menu-container">
           <div class="line-one"></div>
           <div class="line-two"></div>
           <div class="line-three"></div>
         </div>
         <nav>
+
           <ul>
-            <li><a href="/post/create/<%= USER.id %>">new post</a></li>
+
+            <!-- <a href="/auth/login/authentication">
+              <button class="new-post">home</button>
+            </a> -->
+
+            <a href="/post/create/<%= USER.id %>">
+              <button class="new-post">new post</button>
+            </a>
+
             <!--  <li><a href="/auth/login/authentication">home</a></li> -->
-            <li><a href="/publications/show/<%= USER.id %>">publications</a></li>
-            <li><a href="/auth/logout">logout</a></li>
+
+            <a href="/publications/show/<%= USER.id %>">
+              <button class="publi">publications</button>
+            </a>
+
+            <div class="border">
+              <button id="btn-themes">
+                <div class="sun"></div>
+                <div class="moon"></div>
+              </button>
+            </div>
           </ul>
         </nav>
 
@@ -44,18 +70,32 @@
                   <%= post.comment %>
                 </p>
               </div>
-              <span><strong>Data: <%= post.createAt %></strong></span>
+                <span><strong>Data: <%= post.createAt %></strong></span>
               <div class="options">
                 <div class="options-container">
                   <form action="/publications/<%= USER.id %>" method="POST">
+                    
                     <input type="text" name="title" value="<%= post.title %>">
                     <input type="text" name="comment" value="<%= post.comment %>">
-                    <a href="/publications"><button type="" id="btn-publish">publish</button></a>
+
+                    <a href="/publications" title="Publish">
+                      <button type="" id="btn-publish">
+                        <i class="ph-share" style="color: #000080;"></i>
+                      </button>
+                    </a>
                   </form>
-                  <a href="/posts/edit/<%= USER.id %>/post/<%= post.id %>"><button type=""
-                      id="btn-edit">edit</button></a>
-                  <a href="/posts/delete/<%= USER.id %>/post/<%= post.id %>"><button type=""
-                      id="btn-delete">delete</button></a>
+
+                  <a href="/posts/edit/<%= USER.id %>/post/<%= post.id %>" title="Edit" >
+                    <button type="" id="btn-edit">
+                      <i class="ph-pencil" style="color: green;"></i>
+                    </button>
+                  </a>
+
+                  <a href="/posts/delete/<%= USER.id %>/post/<%= post.id %>" title="Delete" >
+                    <button type="" id="btn-delete">
+                      <i class="ph-trash" style="color: red;"></i>
+                    </button>
+                    </a>
                 </div>
               </div>
             </li>
@@ -83,6 +123,7 @@
         </div>
         <% } %>
           <script src="/js/menu/main.js"></script>
+          <script src="/js/themes/main.js"></script>
 </body>
 
 </html>

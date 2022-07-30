@@ -4,100 +4,141 @@
   box-sizing: border-box;
 }
 
-body {
-  background: #f2f2f2;
+:root {
+  /* Light Theme */
+  --background-light: #f2f2f2;
+  --text: #fff;
+  --text-input: #b3b3b3;
+  --header-light: #4d79ff;
+  --button-light: #4d79ff;
+  --border-hover: #4d79ff;
+  --border: #b3b3b3;
+  --background-message-success: #76e7a5;
+  --background-message-error: #e77676;
+  --text-message-success: #02703d;
+  --text-message-error: #700202;
+
+  /* Dark Theme */
+  --text-dark: #535252;
+}
+
+body, html {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  background: var(--background-light);
 }
 
 header {
   margin: auto;
+
   width: 100%;
   min-width: 280px;
   height: 40vh;
-  background: #4d79ff;
+
+  background: var(--header-light);
 }
 
 .container {
+  display: flex;
+  flex-direction: column;
   margin: -175px auto;
-
-  width: 30%;
-  max-width: 500px;
-  min-width: 260px;
+  padding: 1em;
+  gap: 1em;
+  
+  max-width: 300px;
+  min-width: 350px;
   height: 350px;
-
-  border: 1px solid transparent;
   border-radius: 8px;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  background: #fff;
+
+  background: var(--background-light);
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
+
+.container h1 {
+    text-align: center;
+    font-family: 'Varela Round', sans-serif;
+    color: var(--text-dark);
 }
 
 .container form {
-  margin: 50px auto;
-  
-  width: 95%;
-  height: 80%;
-  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
 }
 
-.container form input {
-  display: block;
-  
-  margin: 10px auto;
-  padding: 0px 0px 0px 8px;
-  
-  width : 100%;
-  height: 55px;
+.container form .input {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+    gap: 0.7em;
+    margin: 5px;
+    padding: 10px;
 
-  outline: transparent;
-  border: 1px solid #b3b3b3;
-  border-radius: 8px;
-  background: none;
+    width: 100%;
+    height: 50px;
 
-  font-size: 1.1em;
-  font-family: sans-serif;
-  color: #b3b3b3;
-  
+    border-radius: 8px;
+    border: 1px solid var(--border) ;
+    background: transparent;
 }
 
-.container form input::placeholder {
-  color: #b3b3b3;
+.container form .input input {
+    width: 230px;
+    height: 45px;
+
+    font-size: 1em;
+
+    outline: transparent;
+    border: none;
+    background: transparent;
+
+    color: var(--text-input);
 }
 
-.container form input:hover {
-  border: 1px solid #4d79ff;
+.container form .input input::placeholder {
+  color: var(--text-input);
+}
+
+.container form .input img {
+    cursor: pointer;
 }
 
 .container form button {
-  display: block;
-  
-  margin: 30px auto;
-  
-  width: 100%;
-  height: 50px;
+    margin: 15px;
+    width: 100%;
+    height: 50px;
 
-  outline: transparent;
-  background: #4d79ff;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: .2s;
+    outline: transparent;
+    border: none;
+    border-radius: 3px;
 
-  font-size: 1.4em;
-  font-family: sans-serif;
-  color: #fff;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: var(--text);
+
+    cursor: pointer;
+    
+    background: var(--button-light);
+
 }
 
 .container .others {
-  margin: 10px auto;
-  width: 90%;
-  min-width: 240px;
-  height: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+
+    width: 100%;
+    min-width: 240px;
+    height: auto;
 
 }
 
 .container .others p {
-  text-align: center;
-  font-family: sans-serif;
-  line-height: 3.3em;
+    text-align: center;
+    font-family: sans-serif;
 }
 
 .message_success { 
@@ -106,7 +147,7 @@ header {
   max-width: 500px;
   min-width: 260px;
   height: 50px;
-  background: #76e7a5;
+  background: var(--background-message-success);
   border-radius: 8px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
 }
@@ -117,7 +158,7 @@ header {
   font-family: sans-serif;
   font-weight: 300;
   line-height: 2.3em;
-  color: #02703d;
+  color: var(--text-message-success);
 }
 
 .message_error {
@@ -126,7 +167,7 @@ header {
   max-width: 500px;
   min-width: 260px;
   height: 50px;
-  background: #e77676;
+  background: var(--background-message-error);
   border-radius: 8px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
 }
@@ -137,22 +178,10 @@ header {
   font-family: sans-serif;
   font-weight: 300;
   line-height: 2.3em;
-  color: #700202;
+  color: var(--text-message-error);
 }
 
 @media (max-width: 425px) {
-  .container form input {
-    height: 45px;
-
-    font-size: 1em;
-  }
-
-  .container form button {
-    height: 40px;
-
-    font-size: 1.2em;
-  }
-
   .message_success {
     height: 40px;
   }

@@ -6,6 +6,23 @@ class PublicationController {
     res.render('publish/index.ejs')
   }
 
+  async showAll(req, res) {
+    const { title } = req.params
+
+    try {
+      const publication = await Publication.findOne({ title })
+
+      if (!publication) {
+        res.status(404).send({ message: "Title not found" })
+      } else {
+        res.send(publication)
+      }
+
+    } catch (err) {
+      res.status(500).send({ message: "Internal server error" })
+    }
+  }
+
   async show(req, res) {
     const { user_id } = req.params
     const { title, comment } = req.body

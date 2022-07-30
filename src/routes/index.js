@@ -38,6 +38,7 @@ class Routes {
 
   publication() {
     this.router.get("/publications", publicationController.index)
+    this.router.get("/find/:title", publicationController.showAll)
     this.router.post("/publications/:user_id", publicationController.show)
     this.router.get("/publications/show/:user_id", publicationController.showIndex)
     this.router.get("/publication/edit/:user_id/publish/:id", publicationController.editIndex)

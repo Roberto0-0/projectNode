@@ -4,15 +4,144 @@
   box-sizing: border-box;
 }
 
+:root {
+  /* Light Theme */
+  --background-light: #f2f2f2;
+  --background-message-success: #76e7a5;
+  --background-message-error: #e77676;
+  --header-light: #4d79ff;
+  --text: #fff;
+  --text-light: #cccccc;
+  --text-blue: #000080;
+  --text-message-success: #02703d;
+  --text-message-error: #700202;
+  --button-white: #fff;
+  --button-blue: #000080;
+  --border-light: #b3b3b3;
+  --border-comment-light: #d9d9d9;
+  --box-comment-light: #ECEBEB;
+
+  /* Dark Theme */
+  --background-dark: #09090A;
+  --header-dark: #121214;
+  --text-dark: #535252;
+  --border-dark: #2c2b2b;
+  --box-comment-dark: #121214;
+}
+
+
+#themes.active {
+  background: var(--background-dark);
+  transition: 0.4s;
+}
+
+#themes.active header {
+  background: var(--header-dark);
+  border-bottom: 1px solid var(--border-dark);
+  transition: 0.4s;
+}
+
+#themes.active header .container nav ul a .login {
+  background: var(--button-blue);
+  color: var(--text);
+  transition: 0.3s;
+}
+
+#themes.active header .container nav ul a .login:hover {
+  background: var(--button-white);
+  color: var(--text-blue);
+  transition: 0.3s;
+}
+
+#themes.active header .container nav ul a .signup {
+  background: var(--button-white);
+  color: var(--text-blue);
+  transition: 0.3s;
+}
+
+#themes.active header .container nav ul a .signup:hover {
+  background: var(--button-blue);
+  color: var(--text);
+  transition: 0.3s;
+}
+
+#themes.active header .container nav ul .border button {
+  margin: 0px 0px 0px 30px;
+  transition: 0.3s;
+}
+
+#themes.active header .container nav ul .border button .sun {
+  display: none;
+  transition: 0.3s;
+}
+
+#themes.active header .container nav ul .border button .moon {
+  display: block;
+  transition: 0.3s;
+}
+
+#themes.active main .main-container ul li {
+  border: 1px solid var(--border-dark);
+  background: var(--box-comment-dark);
+  transition: 0.3s;
+}
+
+#themes.active main .main-container ul li .profile {
+  border-bottom: 1px solid var(--border-dark);
+  transition: 0.3s;
+}
+
+#themes.active main .main-container ul li .profile .image {
+  border: 2px solid var(--text-dark);
+  transition: 0.3s;
+}
+
+#themes.active main .main-container ul li .profile .image .user-light {
+  display: none;
+  transition: 0.3s;
+}
+
+#themes.active main .main-container ul li .profile .image .user-dark {
+  display: block;
+  transition: 0.3s;
+}
+
+#themes.active main .main-container ul li .profile h2 {
+  color: var(--text-dark);
+  transition: 0.3s;
+}
+
+#themes.active main .main-container ul li h3 {
+  color: var(--text-light);
+  transition: 0.3s;
+}
+
+#themes.active main .main-container ul li .campText {
+  color: var(--text-light);
+  transition: 0.3s;
+}
+
+#themes.active main .main-container ul li .campText p{
+  color: var(--text-light);
+  transition: 0.3s;
+}
+
+#themes.active main .main-container ul li span {
+  color: var(--text-light);
+  transition: 0.3s;
+}
+
 body {
-  background: #f2f2f2;
+  background: var(--background-light);
+  transition: 0.4s;
 }
 
 header {
   width: 100%;
   height: 100px;
-
-  background: #4d79ff; 
+  
+  background: var(--header-light);
+  transition: 0.4s;
 }
 
 header .container {
@@ -23,22 +152,20 @@ header .container {
   max-width: 1250px;
   height: 99%;
 
+  align-items: center;
   justify-content: space-between;
 }
 
 header .container  h2 {
-  margin: 30px 0px 0px 0px;
-  
+  font-family: 'Varela Round', sans-serif;
   font-size: 1.8em;
-  font-family: sans-serif;
-  font-weight: 300;
-  color: #fff;
+  color: var(--text);
 }
 
 header .container nav {
-  margin: 25px 0px 0px 0px;
-  width: 200px;
+  width: 290px;
   height: 50px; 
+
 }
 
 header .container nav ul {
@@ -48,43 +175,216 @@ header .container nav ul {
   width: 90%;
   height: 99%;
 
-  text-align: center;
   list-style-type: none;
+
+  align-items: center;
+
+  justify-content: space-between;
+
 }
 
-header .container nav ul li {
-  margin: auto;
-  width: 45%;
+header .container nav ul a button {
   height: 35px;
   
-  background: #000080;
-  
-  border-radius: 8px;
+  font-family: 'Manrope', sans-serif;
+  font-size: 1em;
+  font-weight: bold;
+
+  outline: transparent;
+  border: none;
+  border-radius: 3px;
 
   cursor: pointer;
   
 }
 
-header .container nav ul li a { 
-  display: block; 
+header .container nav ul a .login {
+  width: 70px;
+
+  background: var(--button-white);
+  color: var(--text-blue);
+  transition: 0.3s;
+}
+
+header .container nav ul a .signup {
+  width: 100px;
+
+  background: var(--button-blue);
+  color: var(--text);
+  transition: 0.3s;
+}
+
+header .container nav ul .login:hover {
+  background: var(--button-blue);
+  color: var(--text);
+  transition: 0.3s;
+}
+
+header .container nav ul .signup:hover {
+  background: var(--button-white);
+  color: var(--text-blue);
+  transition: 0.3s;
+}
+
+header .container nav ul .border {
+  display: flex;
+
+  padding: 3px;
+  width: 65px;
+  height: 35px;
+
+  border-radius: 20px;
+
+  background: #aaaaaa;
+
+  align-items: center;
+
+}
+
+header .container nav ul .border button {
+  /* margin: 0px 0px 0px 1px; */
+
+  width: 30px;
+  height: 30px;
+
+  outline: transparent;
+  border: none;
+  border-radius: 50%;
+  background: #fff;
+
+  align-items: center;
+
+  cursor: pointer;
+  transition: 0.3s;
   
-  margin: 8px 0px 0px 0px;
- 
+}
+
+header .container nav ul .border button .moon{
+  display: none;
+
+}
+
+main {
+  margin: 20px auto;
+  width: 98vw;
+  height: auto;
+  min-height: 200px;
+
+
+}
+
+main .main-container {
+  margin: auto;
+
+  width: 60%;
+  max-width: 1250px;
+  min-width: 300px;
+  height: 100%;
+}
+
+main .main-container ul {
+  margin: auto;
+
+  width: 100%;
+  height: 100%;
+  min-height: 200px;
+
+}
+
+main .main-container ul li {
+  display: block;
+  
+  margin: 10px auto;
+  width: 100%;
+  height: 100%;
+  min-height: 200px;
+
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+
+  background: var(--box-comment-light);
+
+}
+
+main .main-container ul li .profile {
+  display: flex;
+
+  width: 100%;
+  height: 70px;
+
+  border-bottom: 1px solid var(--border-comment-light);
+  transition: 0.3s;
+
+}
+
+main .main-container ul li .profile .image {
+  margin: 10px 0px 0px 10px;
+
+  width: 50px;
+  height: 50px;
+
+  border: 2px solid var(--background-dark);
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+main .main-container ul li .profile .image img {
+  margin: 9px 0px 0px 8px;
+  width: 30px;
+  height: 30px;
+}
+
+main .main-container ul li .profile .image .user-dark {
+  display: none;
+  transition: 0.3s;
+}
+
+main .main-container ul li .profile h2 {
+  margin-left: 10px;
+  
+  text-align: center;
   font-family: sans-serif;
-  font-weight: bold;
-  color: #fff;
-  text-decoration: none;
+  font-size: 1.1em;
+  font-weight: 300;
+  line-height: 3.9em;
+  color: var(--text-dark);
+  transition: 0.3s;
 
 }
 
-header .container nav ul li:hover {
-  transition: 0.4s;
+main .main-container ul li .profile span {
+  margin-left: 10px;
 
-  background: #9999ff;
+  font-family: sans-serif;
+  font-size: .8em;
+  line-height: 3.8em;
 }
 
-header .container nav ul li a:hover {
-  color: #000;
+
+main .main-container ul li h3 {
+  margin-top: 30px;
+
+  font-family: sans-serif;
+  font-size: 1.5em;
+  text-indent: 10px;
+}
+
+main .main-container ul li .campText {
+  margin: 10px auto;
+  width: 97%;
+  height: auto;
+
+}
+
+main .main-container ul li .campText p {
+  text-align: center;
+  font-family: sans-serif;
+  /* text-indent: 10px; */
+  text-align:justify;
+  /* line-height: 2em; */
+
+  word-wrap: break-word;
+
 }
 
 .message_success { 
@@ -93,7 +393,7 @@ header .container nav ul li a:hover {
   max-width: 500px;
   min-width: 260px;
   height: 50px;
-  background: #76e7a5;
+  background: var(--background-message-success);
   border-radius: 8px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
 }
@@ -101,10 +401,10 @@ header .container nav ul li a:hover {
 .message_success h2 {
   text-align: center; 
   font-size: 1.3em;
-  font-family: sans-serif;
+  font-family: 'Manrope', sans-serif;
   font-weight: 300;
   line-height: 2.3em;
-  color: #02703d;
+  color: var(--text-message-success);
 }
 
 .message_error {
@@ -113,7 +413,7 @@ header .container nav ul li a:hover {
   max-width: 500px;
   min-width: 260px;
   height: 50px;
-  background: #e77676;
+  background: var(--background-message-error);
   border-radius: 8px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
 }
@@ -121,14 +421,18 @@ header .container nav ul li a:hover {
 .message_error h2 {
   text-align: center;
   font-size: 1.3em;
-  font-family: sans-serif;
+  font-family: 'Manrope', sans-serif;
   font-weight: 300;
   line-height: 2.3em;
-  color: #700202;
+  color: var(--text-message-error);
 }
 
 
 @media (max-width: 425px) {
+  header .container h2 {
+    font-size: 1.5em;
+  }
+
   nav {
     display: none;
   }
@@ -165,9 +469,13 @@ header .container nav ul li a:hover {
     width: 100vw;
     height: 100vh;
 
-    background: #4d79ff;
+    background: var(--header-light);
 
     z-index: 10px;
+  }
+
+  #themes.active .menu-box.active {
+    background: var(--header-dark);
   }
 
   .menu-box.active nav {
@@ -181,17 +489,21 @@ header .container nav ul li a:hover {
 
   .menu-box.active nav ul {
     display: block;
+    padding: 5px;   
   }
 
-  .menu-box.active nav ul li {
-    margin: auto;
+  .menu-box.active nav ul a button {
+    margin: 5px auto;
     width: 99%;
     height: 50px; 
   }
 
-  .menu-box.active nav ul li a { 
+  .menu-box.active nav ul a button { 
     font-size: 1.4em;
-      line-height: 2.1em;
+  }
+
+  .menu-box.active nav ul .border {
+    margin: 5px auto;
   }
 
   .menu-box.active .menu-container .line-one {
@@ -204,6 +516,39 @@ header .container nav ul li a:hover {
 
    .menu-box.active .menu-container .line-three {
     transform: rotate(-45deg) translate(8px, -7px);
+  }
+
+  main .main-container ul li .profile .image {
+    width: 50px;
+    height: 50px;
+  }
+
+  main .main-container ul li .profile .image img {
+    width: 30px;
+    height: 30px;
+  }
+
+  main .main-container ul li .profile h2 {
+    font-size: 1em;
+    line-height: 4.4em;
+  }
+
+  main .main-container ul li .profile span {
+    display: none;
+    font-size: .4em;
+  }
+
+  main .main-container ul li h3 {
+    font-size: 1.3em;
+  }
+
+  main .main-container ul li .campText {
+    width: 93%;
+  }
+
+  main .main-container ul li .options .options-container button {
+    width: 90px;
+    height: 25px;
   }
 
   .menu-box.active body {

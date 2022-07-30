@@ -5,13 +5,24 @@
   <title></title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <script src="https://unpkg.com/phosphor-icons"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Titan+One&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="/css/layout/style.css">
 </head>
 
-<body>
+<body id="themes">
   <header>
     <div class="container">
-      <h2>Welcome</h2>
+      <h2><strong>Welcome</strong></h2>
       <div class="menu-box">
         <div class="menu-container">
           <div class="line-one"></div>
@@ -20,15 +31,53 @@
         </div>
         <nav>
           <ul>
-            <li><a href="/auth/login">log in</a>
-            </li>
-            <li><a href="/auth/register">sign up</a>
-            </li>
+            <a href="/auth/login">
+              <button class="login">log in</button>
+            </a>
+
+            <a href="/auth/register">
+              <button class="signup">sing up</button>
+            </a>
+
+            <div class="border">
+              <button id="btn-themes">
+                <div class="sun"></div>
+                <div class="moon"></div>
+              </button>
+            </div>
+            
           </ul>
         </nav>
       </div>
     </div>
   </header>
+  <main>
+    <div class="main-container">
+      <ul>
+        <% publication.forEach(p=> { %>
+          <li>
+            <div class="profile">
+              <div class="image">
+                <img src="/svg/user/user-line-light.svg" alt="" class="user-light">
+                <img src="/svg/user/user-line-dark.svg" alt="" class="user-dark">
+              </div>
+              <h2>
+                <%= p.userName %>
+              </h2>
+              <!-- <span><strong>Data: <%= p.publishAt %></strong></span> -->
+            </div>
+            <h3>
+              <%= p.title %>
+            </h3>
+            <div class="campText">
+              <p>
+                <%= p.comment %>
+              </p>
+          </li>
+          <% }) %>
+      </ul>
+    </div>
+  </main>
   <% if(message_success.length> 0) { %>
     <div class="message_success">
       <h2>
@@ -45,6 +94,7 @@
         <% } %>
 
           <script src="/js/menu/main.js"></script>
+          <script src="/js/themes/main.js"></script>
 </body>
 
 </html>

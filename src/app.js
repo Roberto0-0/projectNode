@@ -4,6 +4,7 @@ const path = require('path')
 const session = require('express-session')
 const flash = require('express-flash')
 const routes = require("./routes/index")
+const cors = require("cors")
 
 class App {
   constructor() {
@@ -29,6 +30,8 @@ class App {
       cookie: { maxAge: 60000 }
     }))
     this.app.use(flash())
+
+    this.app.use(cors())
   }
 
   routes() {
